@@ -377,3 +377,68 @@ gfx/mobile/stadium2_n64.2bpp: tools/gfx += --trim-whitespace
 %.bin: ;
 %.blk: ;
 %.rle: ;
+
+
+### Custom Development Targets (Nono Edition)
+
+.PHONY: run run-debug dev rebuild help sameboy-check
+
+# Detect SameBoy installation
+SAMEBOY := $(shell \
+	if [ -f "/Applications/SameBoy.app/Contents/MacOS/SameBoy" ]; then \
+		echo "/Applications/SameBoy.app/Contents/MacOS/SameBoy"; \
+	elif [ -f "$$HOME/Applications/SameBoy.app/Contents/MacOS/SameBoy" ]; then \
+		echo "$$HOME/Applications/SameBoy.app/Contents/MacOS/SameBoy"; \
+	elif [ -d "/opt/homebrew/Caskroom/sameboy" ]; then \
+		find /opt/homebrew/Caskroom/sameboy -name "SameBoy" -type f -path "*/Contents/MacOS/SameBoy" 2>/dev/null | head -1; \
+	else \
+		which sameboy 2>/dev/null || echo ""; \
+	fi \
+)
+
+sameboy-check:
+	@if [ -z "$(SAMEBOY)" ]; then \
+		echo "Error: SameBoy not found!"; \
+		echo ""; \
+		echo "Install with Homebrew:"; \
+		echo "  brew install --cask sameboy"; \
+		echo ""; \
+		echo "Or download from: https://sameboy.github.io/"; \
+		exit 1; \
+	fi
+
+run: crystal sameboy-check
+	@echo "Launching pokecrystal.gbc in SameBoy..."
+	@"$(SAMEBOY)" pokecrystal.gbc
+
+run-debug: crystal_debug sameboy-check
+	@echo "Launching pokecrystal_debug.gbc in SameBoy..."
+	@"$(SAMEBOY)" pokecrystal_debug.gbc
+
+dev: run
+
+rebuild: clean crystal
+
+help:
+	@echo "Pokémon Crystal - Nono Edition Build Targets"
+	@echo ""
+	@echo "Standard builds:"
+	@echo "  make                 Build pokecrystal.gbc (v1.0)"
+	@echo "  make crystal11       Build pokecrystal11.gbc (v1.1)"
+	@echo "  make crystal_debug   Build debug version with symbols"
+	@echo ""
+	@echo "Custom development:"
+	@echo "  make run             Build and launch in SameBoy"
+	@echo "  make run-debug       Build debug version and launch in SameBoy"
+	@echo "  make dev             Alias for 'make run'"
+	@echo "  make rebuild         Clean and rebuild from scratch"
+	@echo "  make help            Show this help message"
+	@echo ""
+	@echo "Cleaning:"
+	@echo "  make tidy            Remove ROMs and object files"
+	@echo "  make clean           Remove all generated files (including graphics)"
+	@echo ""
+	@echo "Verification:"
+	@echo "  make compare         Verify ROM matches original checksums"
+	@echo ""
+	@echo "Development docs: docs/custom/DEVELOPMENT.md"
