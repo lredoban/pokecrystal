@@ -1,9 +1,10 @@
 INCLUDE "engine/gfx/sgb_layouts.asm"
 
 DEF SHINY_ATK_MASK EQU %0010
-DEF SHINY_DEF_DV EQU 10
-DEF SHINY_SPD_DV EQU 10
-DEF SHINY_SPC_DV EQU 10
+; Increased shiny odds: Changed from 10 to 6 (approximately 1/512 instead of 1/8192)
+DEF SHINY_DEF_DV EQU 6
+DEF SHINY_SPD_DV EQU 6
+DEF SHINY_SPC_DV EQU 6
 
 CheckShininess:
 ; Check if a mon is shiny by DVs at bc.

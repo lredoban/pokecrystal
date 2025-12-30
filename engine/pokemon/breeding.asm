@@ -182,8 +182,14 @@ DoEggStep::
 	ret z
 	cp EGG
 	jr nz, .next
-	dec [hl]
-	jr nz, .next
+	; Faster egg hatching - decrement 4 times per step (4x faster)
+	ld a, [hl]
+	sub 4
+	jr c, .hatch_now
+	ld [hl], a
+	jr .next
+.hatch_now
+	ld [hl], 0
 	ld a, 1
 	and a
 	ret

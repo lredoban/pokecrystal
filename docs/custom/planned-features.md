@@ -21,13 +21,24 @@ Features planned for the Nono Edition ROM hack. Mark items as completed by chang
 - [ ] Write custom dialogue
 - [ ] Add items/interactions
 
+## High Priority - Tutorial Features (Start Here!)
+
+### Quality of Life Improvements from Wiki Tutorials
+- [x] **Gain experience from catching Pokemon** - COMPLETED! Now get EXP from catching, just like newer Pokemon games ✓
+- [x] **Speed up Pokemon Center healing** - COMPLETED! Healing is now 4-5x faster ✓
+- [x] **Faster egg hatching** - COMPLETED! Eggs hatch in 1/4 the time ✓
+- [x] **Increased shiny odds** - COMPLETED! 16x more common (1/512 vs 1/8192) ✓
+- [x] **Faster text speed** - COMPLETED! All text speeds significantly faster ✓
+- [ ] Custom opening intro (keep for now, maybe modify later)
+
 ## Medium Priority
 
 ### Quality of Life
-- [ ] Increase bag space
-- [ ] Running shoes indoors
-- [ ] Reusable TMs
-- [ ] Pokemon following player (from wiki tutorial)
+- [x] **Increase bag space** - COMPLETED! All pockets have more slots ✓
+- [x] **Running shoes indoors** - COMPLETED! You can now run/bike inside buildings ✓
+- [x] **Reusable TMs** - COMPLETED! TMs are infinite use like HMs ✓
+- [ ] Pokemon following player (complex - no existing tutorial)
+- [ ] Decapitalization (complex - no existing tutorial)
 - [ ] EXP share improvements
 
 ### Game Balance

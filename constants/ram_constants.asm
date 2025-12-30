@@ -45,9 +45,10 @@ DEF TEXT_DELAY_MASK EQU %111
 	const BATTLE_SHIFT   ; 6
 	const BATTLE_SCENE   ; 7
 
-DEF TEXT_DELAY_FAST EQU %001 ; 1
-DEF TEXT_DELAY_MED  EQU %011 ; 3
-DEF TEXT_DELAY_SLOW EQU %101 ; 5
+; Faster text speed - reduced from original values (was 1/3/5)
+DEF TEXT_DELAY_FAST EQU %000 ; 0 (instant)
+DEF TEXT_DELAY_MED  EQU %001 ; 1 (was 3)
+DEF TEXT_DELAY_SLOW EQU %010 ; 2 (was 5)
 
 ; wTextboxFrame::
 	const_def

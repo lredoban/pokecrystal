@@ -44,10 +44,10 @@ DEF NO_LIMITS EQU 0
 	const TM_HM_POCKET    ; 3
 DEF NUM_POCKETS EQU const_value
 
-DEF MAX_ITEMS     EQU 20
-DEF MAX_BALLS     EQU 12
-DEF MAX_KEY_ITEMS EQU 25
-DEF MAX_PC_ITEMS  EQU 50
+DEF MAX_ITEMS     EQU 20  ; Original value (memory constrained)
+DEF MAX_BALLS     EQU 13  ; Increased from 12 (+1 slot)
+DEF MAX_KEY_ITEMS EQU 26  ; Increased from 25 (+1 slot)
+DEF MAX_PC_ITEMS  EQU 52  ; Increased from 50 (+2 slots)
 
 DEF MAX_ITEM_STACK EQU 99
 

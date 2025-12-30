@@ -152,7 +152,7 @@ TeachTMHM:
 
 	ld c, HAPPINESS_LEARNMOVE
 	callfar ChangeHappiness
-	call ConsumeTM
+	; call ConsumeTM  ; Disabled - TMs are now reusable like HMs
 	jr .learned_move
 
 .nope

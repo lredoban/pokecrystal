@@ -703,8 +703,13 @@ PokeBallEffect:
 
 	ld a, [wWildMon]
 	and a
-	jr z, .toss
+	jr nz, .catch_failed
 
+	; Catch successful! Award experience points
+	call GiveExperiencePoints
+	jr .toss
+
+.catch_failed
 	call ClearBGPalettes
 	call ClearTilemap
 

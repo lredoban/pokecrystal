@@ -130,8 +130,7 @@ CheckUpdatePlayerSprite:
 	cp PLAYER_SURF_PIKA
 	jr z, .surfing
 	call GetMapEnvironment
-	cp INDOOR
-	jr z, .no_biking
+	; Allow running indoors - removed INDOOR check
 	cp ENVIRONMENT_5
 	jr z, .no_biking
 	cp DUNGEON
