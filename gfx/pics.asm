@@ -780,6 +780,9 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
+SatotoroFrontpic:    INCBIN "gfx/pokemon/satotoro/front.animated.2bpp.lz"
+SatotoroBackpic:     INCBIN "gfx/pokemon/satotoro/back.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 SECTION "Pics 22", ROMX

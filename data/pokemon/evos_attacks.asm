@@ -3355,3 +3355,19 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SatotoroEvosAttacks:
+	db 0 ; no more evolutions (TODO: add evolutions later)
+	db 1, TACKLE
+	db 1, GROWL
+	db 7, POISON_GAS
+	db 10, SWEET_KISS
+	db 13, ACID
+	db 16, CHARM
+	db 20, POISONPOWDER
+	db 24, SWEET_SCENT
+	db 28, SLUDGE
+	db 32, TOXIC
+	db 36, BODY_SLAM
+	db 40, SLUDGE_BOMB
+	db 0 ; no more level-up moves
