@@ -505,6 +505,7 @@ AideScript_GiveYouBalls:
 	writetext AideText_ExplainBalls
 	promptbutton
 	itemnotify
+	verbosegiveitem BICYCLE
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
 	end
