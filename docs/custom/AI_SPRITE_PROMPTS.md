@@ -163,3 +163,75 @@ For each of your 9 Pokemon:
 - **If the sprite is too detailed:** Ask it to "simplify, use Game Boy limitations, more pixelated"
 - **If the size is wrong:** Ask it to "make the Pokemon smaller, leave more white space around it"
 - **Reference specific Pokemon:** "Make it similar to Cyndaquil's sprite style" or "like Totodile but [your design]"
+
+---
+
+## Step 4: Convert AI-Generated PNGs to GBC Format
+
+**Important!** AI tools (nano-banana, Figma, etc.) often export PNGs in the wrong format for Game Boy Color. The build system requires **exactly 4 colors in paletted mode**.
+
+### The Problem
+
+AI/Figma exports usually have:
+- ❌ Too many colors (8, 16, 256+)
+- ❌ Wrong color mode (RGB/RGBA instead of indexed/paletted)
+- ❌ Wrong palette ordering (not white→light→dark→black)
+
+### The Solution: Conversion Tool
+
+We provide a CLI tool that automatically converts any PNG to the correct format:
+
+```bash
+tools/convert_gbc.sh --type=pokemon input.png output.png
+```
+
+### Complete Workflow
+
+After generating sprites with nano-banana:
+
+```bash
+# 1. Convert front sprite
+tools/convert_gbc.sh --type=pokemon \
+  raw/mypokemon-front.png \
+  gfx/pokemon/mypokemon/front.png
+
+# 2. Convert back sprite
+tools/convert_gbc.sh --type=pokemon \
+  raw/mypokemon-back.png \
+  gfx/pokemon/mypokemon/back.png
+
+# 3. Convert footprint
+tools/convert_gbc.sh --type=footprint \
+  raw/mypokemon-footprint.png \
+  gfx/footprints/mypokemon.png
+
+# 4. Build the ROM
+make
+```
+
+### What the Tool Does Automatically
+
+✅ Reduces to exactly 4 colors (or 2 for footprints)
+✅ Removes transparency (converts to white background)
+✅ Converts to indexed/paletted PNG format
+✅ Ensures white is first color, black is last color
+✅ Sorts middle colors by luminance
+✅ Validates the output format
+
+### Installation (One-Time Setup)
+
+```bash
+# Install dependencies
+brew install pngquant imagemagick
+pip3 install Pillow
+```
+
+### For More Details
+
+See the complete [Graphics Conversion Guide](graphics-conversion.md) for:
+- Detailed usage examples
+- Troubleshooting tips
+- Technical specifications
+- Alternative workflows
+
+---
