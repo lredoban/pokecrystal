@@ -3371,3 +3371,19 @@ SatotoroEvosAttacks:
 	db 36, BODY_SLAM
 	db 40, SLUDGE_BOMB
 	db 0 ; no more level-up moves
+
+TsigoroEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, DEFENSE_CURL
+	db 7, CONFUSION
+	db 10, ROLLOUT
+	db 13, SWIFT
+	db 16, PSYBEAM
+	db 20, LIGHT_SCREEN
+	db 24, PSYCH_UP
+	db 28, PSYCHIC_M
+	db 32, AMNESIA
+	db 36, SHADOW_BALL
+	db 40, FUTURE_SIGHT
+	db 0 ; no more level-up moves

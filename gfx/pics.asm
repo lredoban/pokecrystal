@@ -783,6 +783,9 @@ SECTION "Pics 20", ROMX
 SatotoroFrontpic:    INCBIN "gfx/pokemon/satotoro/front.animated.2bpp.lz"
 SatotoroBackpic:     INCBIN "gfx/pokemon/satotoro/back.2bpp.lz"
 
+TsigoroFrontpic:     INCBIN "gfx/pokemon/tsigoro/front.animated.2bpp.lz"
+TsigoroBackpic:      INCBIN "gfx/pokemon/tsigoro/back.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 SECTION "Pics 22", ROMX

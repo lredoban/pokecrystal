@@ -255,6 +255,7 @@ PokemonPicPointers::
 	dba_pics HoOhFrontpic, HoOhBackpic
 	dba_pics CelebiFrontpic, CelebiBackpic
 	dba_pics SatotoroFrontpic, SatotoroBackpic
+	dba_pics TsigoroFrontpic, TsigoroBackpic
 	assert_table_length NUM_POKEMON
 	dba_pics EggPic ; Egg has no back sprite
 	assert_table_length EGG

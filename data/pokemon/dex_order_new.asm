@@ -254,4 +254,5 @@ NewPokedexOrder:
 	db MEW
 	db CELEBI
 	db SATOTORO
+	db TSIGORO
 	assert_table_length NUM_POKEMON
