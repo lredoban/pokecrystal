@@ -1238,28 +1238,28 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, SATOTORO
-	db 4, SATOTORO
+	db 4, TSIGORO
 	db 3, PIDGEY
 	db 3, SENTRET
 	db 2, RATTATA
-	db 3, HOPPIP
-	db 3, HOPPIP
+	db 4, SATOTORO
+	db 5, TSIGORO
 	; day
 	db 3, SATOTORO
-	db 4, SATOTORO
+	db 4, TSIGORO
 	db 3, PIDGEY
 	db 3, SENTRET
 	db 2, RATTATA
-	db 3, HOPPIP
-	db 3, HOPPIP
+	db 4, SATOTORO
+	db 5, TSIGORO
 	; nite
 	db 3, SATOTORO
-	db 4, SATOTORO
+	db 4, TSIGORO
 	db 3, HOOTHOOT
 	db 3, RATTATA
 	db 2, RATTATA
-	db 3, HOOTHOOT
-	db 3, HOOTHOOT
+	db 4, SATOTORO
+	db 5, TSIGORO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30
